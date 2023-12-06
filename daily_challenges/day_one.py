@@ -22,7 +22,7 @@ In this example, the calibration values of these four lines are 12, 38, 15, and 
 
 Consider your entire calibration document. What is the sum of all of the calibration values?
 """
-
+# Part 1
 
 # read file
 # for each line
@@ -31,18 +31,88 @@ Consider your entire calibration document. What is the sum of all of the calibra
 # print total
 
 
-import re
+# import re
+
+
+# with open("data/day_one.txt") as file:
+#     total = 0
+#     for line in file.readlines():
+#         numbers = re.findall("\d", line)
+#         if len(numbers) == 0:
+#             continue
+#         first_num = numbers[0]
+#         last_num = numbers[-1]
+#         combined_nums = first_num + last_num
+#         total += int(combined_nums)
+
+# print(total)
+
+
+"""
+--- Part Two ---
+Your calculation isn't quite right. It looks like some of the digits are actually spelled out with letters: one, two, three, four, five, six, seven, eight, and nine also count as valid "digits".
+
+Equipped with this new information, you now need to find the real first and last digit on each line. For example:
+
+two1nine
+eightwothree
+abcone2threexyz
+xtwone3four
+4nineeightseven2
+zoneight234
+7pqrstsixteen
+In this example, the calibration values are 29, 83, 13, 24, 42, 14, and 76. Adding these together produces 281.
+
+What is the sum of all of the calibration values?
+"""
+
+
+# Part 2
+# read file
+# for each line
+# replace strings for integers
+# get first and last numbers (regex?)
+# add to sum
+# print total
+
+# import re
+
+
+# LETTERS_TO_NUMBERS = {"one": "1", "two": "2", "three": "3", "four": "4", "five": "5", "six": "6", "seven": "7", "eight": "8", "nine": "9"}
+
+
+# with open("data/day_one.txt") as file:
+#     total = 0
+#     for line in file.readlines():
+#         line_numbers = {}
+#         for letters, number_in_line in LETTERS_TO_NUMBERS.items():
+#             if letters in line:
+#                 for position, number_in_dict in line_numbers.items():
+#                     if number_in_line == number_in_dict:
+#                         next_position = line.find(letters, position+1)
+                        
+
+#         #         position = line.find(letters)
+#         #         if position in line_numbers:
+#         #             position = line.find(letters)
+#         #             line_numbers.append({position: number})
+#         #     if number in line:
+#         #         line.find(number)
+#         #         position = line.find(number)
+#         #         line_numbers.append({position: number})
+#         # numbers = re.findall("\d", line)
+#         # if len(numbers) == 0:
+#         #     continue
+#         # first_num = numbers[0]
+#         # last_num = numbers[-1]
+#         # combined_nums = first_num + last_num
+#         # total += int(combined_nums)
+
+# print(total)
 
 
 with open("data/day_one.txt") as file:
-    total = 0
+    numbers = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
     for line in file.readlines():
-        numbers = re.findall("\d", line)
-        if len(numbers) == 0:
-            continue
-        first_num = numbers[0]
-        last_num = numbers[-1]
-        combined_nums = first_num + last_num
-        total += int(combined_nums)
-
-print(total)
+        if any(x in line for x in numbers):
+            print("yeah")
