@@ -111,8 +111,9 @@ What is the sum of all of the calibration values?
 # print(total)
 
 
-with open("data/day_one.txt") as file:
-    numbers = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
-    for line in file.readlines():
-        if any(x in line for x in numbers):
-            print("yeah")
+# with open("data/day_one.txt") as file:
+#     numbers = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+#     for line in file.readlines():
+#         if any(x in line for x in numbers):
+#             for number in numbers:
+
